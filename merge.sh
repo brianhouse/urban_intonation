@@ -1,0 +1,1 @@
+ffmpeg -f concat -i <(for f in ./output/*.wav; do echo "file '$PWD/$f'"; done) -c copy ./output/merge.wav
