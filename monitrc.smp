@@ -1,0 +1,10 @@
+set logfile /var/log/monit.log
+
+set daemon 120
+
+set httpd port 2812 and use address localhost
+  allow localhost
+
+check process recorder with pidfile /var/run/recorder.pid
+  start program = "/home/pi/urban_intonation/record.sh start"
+  stop program = "/home/pi/urban_intonation/record.sh stop"
