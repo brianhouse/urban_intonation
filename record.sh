@@ -4,7 +4,7 @@ PIDFILE=/var/run/recorder.pid
 
 case $1 in
    start)
-       arecord -D plughw:1,0 -c 1 -f S16_LE -r 44100 -t wav --max-file-time 3600 /home/pi/urban_intonation/output/`date +%s`.wav 2>/dev/null &
+       arecord -D plughw:1,0 -c 1 -f S16_LE -r 192000 -t wav --max-file-time 3600 /home/pi/urban_intonation/output/`date +%s`.wav 2>/dev/null &
        echo $! > ${PIDFILE} 
    ;;
    stop)
@@ -41,3 +41,8 @@ exit 0
 #
 # beware: http://blog.nagimov.com/alsa-utils-arecord-bug-lots-of-wav-files-ignoring-duration-parameter/
 # instead of this, upgrade to alsa 1.1.3 from source: https://stackoverflow.com/questions/24629915/multiple-files-created-by-arecord
+#
+#
+#
+# Bits per sample x samples per second = bits per second / 8 = Bytes per second x 60 seconds = Bytes per minute x 60 minutes = Bytes per hour of mono
+# 24 * 192 = 4608 /8 = 576 * 60 = 34560 * 60 = 2073600 bytes per hour = 2gigs per hour * 24 = 48gigs for 24 hour recording
