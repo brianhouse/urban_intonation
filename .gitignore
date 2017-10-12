@@ -5,3 +5,5 @@ procedure.txt
 *.wav
 *.zip
 *.png
+recordings
+offset.txt

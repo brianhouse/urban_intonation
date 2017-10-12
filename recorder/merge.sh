@@ -1,1 +1,1 @@
-ffmpeg -f concat -i <(for f in /home/pi/urban_intonation/output/*.wav; do echo "file '$PWD/$f'"; done) -c copy /home/pi/urban_intonation/output/merge.wav
+ffmpeg -f concat -i <(for f in /home/pi/urban_intonation/recorder/output/*.wav; do echo "file '$PWD/$f'"; done) -c copy /home/pi/urban_intonation/output/merge.wav

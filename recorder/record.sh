@@ -4,7 +4,7 @@ PIDFILE=/var/run/recorder.pid
 
 case $1 in
    start)
-       arecord -D plughw:1,0 -c 1 -f S16_LE -r 192000 -t wav --max-file-time 3600 /home/pi/urban_intonation/output/`date +%s`.wav 2>/dev/null &
+       arecord -D plughw:1,0 -c 1 -f S16_LE -r 192000 -t wav --max-file-time 3600 /home/pi/urban_intonation/recorder/output/`date +%s`.wav 2>/dev/null &
        echo $! > ${PIDFILE} 
    ;;
    stop)

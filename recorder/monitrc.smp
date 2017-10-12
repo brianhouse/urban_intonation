@@ -6,5 +6,5 @@ set httpd port 2812 and use address localhost
   allow localhost
 
 check process recorder with pidfile /var/run/recorder.pid
-  start program = "/home/pi/urban_intonation/record.sh start"
-  stop program = "/home/pi/urban_intonation/record.sh stop"
+  start program = "/home/pi/urban_intonation/recorder/record.sh start"
+  stop program = "/home/pi/urban_intonation/recorder/record.sh stop"
