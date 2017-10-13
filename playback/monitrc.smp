@@ -5,6 +5,6 @@ set daemon 120
 set httpd port 2812 and use address localhost
   allow localhost
 
-check process recorder with pidfile /var/run/recorder.pid
+check process playback with pidfile /var/run/playback.pid
   start program = "/home/pi/urban_intonation/playback/playback.sh start"
   stop program = "/home/pi/urban_intonation/playback/playback.sh stop"
