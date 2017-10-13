@@ -8,6 +8,7 @@ case $1 in
       echo $! > ${PIDFILE} 
    ;;
    stop)
+      killall pd-watchdog
       kill `cat ${PIDFILE}`
       rm ${PIDFILE}
    ;;
