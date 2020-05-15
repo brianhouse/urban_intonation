@@ -1,0 +1,15 @@
+[Unit]
+Description=Rat Playback
+After=multi-user.target
+
+[Service]
+User=pi
+ExecStart=/home/pi/urban_intonation/playback/playback.sh
+
+[Install]
+WantedBy=multi-user.target
+
+
+# sudo nano /lib/systemd/system/rat.service
+# sudo systemctl daemon-reload
+# sudo systemctl enable rat.service
