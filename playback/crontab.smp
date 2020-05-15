@@ -1,1 +1,0 @@
-@reboot sleep 2; /home/pi/urban_intonation/playback/playback.sh
